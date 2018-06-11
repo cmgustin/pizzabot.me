@@ -1,19 +1,19 @@
 import './modules'
 
-var button = document.getElementById("create");
-var output = document.getElementById("output");
-var toppingsSelect = document.getElementById("toppingsNumber");
-var appendString = "";
+const button = document.getElementById("create");
+const output = document.getElementById("output");
+const toppingsSelect = document.getElementById("toppingsNumber");
+let appendString = "";
 
-for (var i = 1; i <= 7; i++) {
-  appendString += "<option value='"+i+"'>"+i+"</option>";
+for (let i = 1; i <= 7; i++) {
+  appendString += `<option value="${i}">${i}</option>`;
 }
 
 toppingsSelect.innerHTML += appendString;
 
-var meats = ["Pepperoni", "Italian Sausage", "Ham", "Bacon", "Smoked Chicken", "Anchovies", "Meatballs"];
-var veggies = ["Green Peppers", "Onions", "Tomatoes", "Spinach", "Green Olives", "Black Olives", "Mushrooms", "Garlic", "Banana Peppers", "Jalapenos", "Broccoli", "Basil", "Calobrian Peppers", "Pineapple", "Cherry Peppers", "Kalamata Olives", "Artichoke Hearts", "Roasted Red Peppers"];
-var cheeses = ["Feta", "Extra Mozzarella", "Dal"];
+const meats = ["Pepperoni", "Italian Sausage", "Ham", "Bacon", "Smoked Chicken", "Anchovies", "Meatballs"];
+const veggies = ["Green Peppers", "Onions", "Tomatoes", "Spinach", "Green Olives", "Black Olives", "Mushrooms", "Garlic", "Banana Peppers", "Jalapenos", "Broccoli", "Basil", "Calobrian Peppers", "Pineapple", "Cherry Peppers", "Kalamata Olives", "Artichoke Hearts", "Roasted Red Peppers"];
+const cheeses = ["Feta", "Extra Mozzarella", "Dal"];
 
 
 // When the button is clicked, pick 3 random toppings and show them to the user
@@ -22,10 +22,10 @@ button.addEventListener("click", automaticPizza);
 function automaticPizza(e) {
   e.preventDefault();
   // Create empty array to hold random toppings in
-  var randToppings = [];
+  let randToppings = [];
   // Get value for amount of toppings
   // If value is IDGAF, generate a random number between 1 and 7
-  var numToppings = toppingsSelect.value;
+  let numToppings = toppingsSelect.value;
   if (numToppings === "IDGAF") {
     numToppings = Math.floor((Math.random() * 7) + 1);
   } else {
@@ -33,11 +33,11 @@ function automaticPizza(e) {
   }
   
   // Check if meats only or veggies only is checked
-  var dietRestrict = document.forms["pizzaMaker"].options.value;
+  const dietRestrict = document.forms["pizzaMaker"].options.value;
   
-  for (var i = 0; i < numToppings; i++) {
+  for (let i = 0; i < numToppings; i++) {
     if (dietRestrict === "veggies") {
-      var veggie = randomVeggie();
+      let veggie = randomVeggie();
       // If already in the array, pick another veggie
       while (randToppings.includes(veggie)) {
         veggie = randomVeggie();
@@ -45,7 +45,7 @@ function automaticPizza(e) {
       // Once veggie is unique, push to array
       randToppings.push(veggie);
     } else if (dietRestrict === "meats") {
-      var meat = randomMeat();
+        let meat = randomMeat();
       // If already in the array, pick another meat
       while (randToppings.includes(meat)) {
         meat = randomMeat();
@@ -53,15 +53,15 @@ function automaticPizza(e) {
       // Once meat is unique, push to array
       randToppings.push(meat);
     } else {
-      var rando = Math.floor(Math.random() * 100 + 1);
+      let rando = Math.floor(Math.random() * 100 + 1);
       if (rando % 2 === 0) {
-        var randMeat = randomMeat();
+        let randMeat = randomMeat();
         while (randToppings.includes(randMeat)) {
           randMeat = randomMeat();
         }
         randToppings.push(randMeat);
       } else {
-        var randVeggie = randomVeggie();
+        let randVeggie = randomVeggie();
         while (randToppings.includes(randVeggie)) {
           randVeggie = randomVeggie();
         }
@@ -70,8 +70,8 @@ function automaticPizza(e) {
     }
   }
 
-  var toppingsString = "";
-  for (var k = 0; k < randToppings.length; k++) {
+  let toppingsString = "";
+  for (let k = 0; k < randToppings.length; k++) {
     toppingsString += `<li>${randToppings[k]}</li>`;
   }
   output.innerHTML = toppingsString;
