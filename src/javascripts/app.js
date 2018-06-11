@@ -1,5 +1,10 @@
 import './modules'
 
+// Generate year for copyright
+const year = new Date().getFullYear();
+document.querySelector("#copyright span").innerHTML = year;
+
+// Pizza code
 const button = document.getElementById("create");
 const output = document.getElementById("output");
 const toppingsSelect = document.getElementById("toppingsNumber");
@@ -71,9 +76,13 @@ function automaticPizza(e) {
   }
 
   let toppingsString = "";
-  for (let k = 0; k < randToppings.length; k++) {
-    toppingsString += `<li>${randToppings[k]}</li>`;
+  // for (let k = 0; k < randToppings.length; k++) {
+  //   toppingsString += `<li>${randToppings[k]}</li>`;
+  // }
+  for (var topping of randToppings) {
+    toppingsString += `<li>${topping}</li>`;
   }
+
   output.innerHTML = toppingsString;
 }
 
