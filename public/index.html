@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pizzabot.me | Toppings Made Easy</title>
+    <title>Toppings Made Easy | Pizzabot.me</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Generate using http://realfavicongenerator.net/ -->
@@ -13,7 +13,8 @@
   </head>
   <body>
     
-  <form id="pizzaMaker">
+<div class="container wrap">
+  <form id="pizzaMaker" class="form">
     <label for="toppingsNumber">How many toppings:</label>
     <br>
     <select name="toppingsNumber" id="toppingsNumber">
@@ -31,13 +32,18 @@
     <label for="veggies">Veggies only</label>
     <br>
     <br>
-    <button id="create">Automatic Pizza!</button>
+    <button id="create" class="btn">Automatic Pizza!</button>
   </form>
   
-  <br>
-  <p>Your automatic pizza is:</p>
-  <ul id="output"></ul>
-  <p id="priceOutput"></p>
+  <div class="output-wrap">
+    <p>Your automatic pizza is:</p>
+    <ul id="output"></ul>
+    <p id="priceOutput"></p>
+  </div>
+</div>
+<footer>
+  <div>Favicon and background icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</footer>
 
     
       <script src="javascripts/app.js"></script>
