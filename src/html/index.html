@@ -1,0 +1,35 @@
+{#
+  Nunjucks Templating!
+  Homepage: https://mozilla.github.io/nunjucks/
+  Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+  <form id="pizzaMaker">
+    <label for="toppingsNumber">How many toppings:</label>
+    <br>
+    <select name="toppingsNumber" id="toppingsNumber">
+      <option value="IDGAF">IDGAF</option>
+    </select>
+    <br>
+    <br>
+    <input type="radio" name="options" value="all" checked>
+    <label for="all">Down for whatever</label>
+    <br>
+    <input type="radio" name="options" value="meats">
+    <label for="meats">Meats only</label>
+    <br>
+    <input type="radio" name="options" value="veggies">
+    <label for="veggies">Veggies only</label>
+    <br>
+    <br>
+    <button id="create">Automatic Pizza!</button>
+  </form>
+  
+  <br>
+  <p>Your automatic pizza is:</p>
+  <ul id="output"></ul>
+  <p id="priceOutput"></p>
+{% endblock %}
