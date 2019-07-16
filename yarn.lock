@@ -2441,6 +2441,10 @@ flagged-respawn@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-1.0.0.tgz#4e79ae9b2eb38bf86b3bb56bf3e0a56aa5fcabd7"
 
+flat-ui@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/flat-ui/-/flat-ui-2.1.1.tgz#16be89413fc4f44cd24f4dfc0d04e33c4f42e135"
+
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"

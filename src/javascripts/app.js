@@ -5,21 +5,14 @@ const year = new Date().getFullYear();
 document.querySelector("#copyright span").innerHTML = year;
 
 // Pizza code
+const form = document.forms["pizzaMaker"];
 const button = document.getElementById("create");
 const output = document.getElementById("output");
-const toppingsSelect = document.getElementById("toppingsNumber");
-let appendString = "";
 
-for (let i = 1; i <= 7; i++) {
-  appendString += `<option value="${i}">${i}</option>`;
-}
-
-toppingsSelect.innerHTML += appendString;
-
+// Arrays
 const meats = ["Pepperoni", "Italian Sausage", "Ham", "Bacon", "Smoked Chicken", "Anchovies", "Meatballs"];
 const veggies = ["Green Peppers", "Onions", "Tomatoes", "Spinach", "Green Olives", "Black Olives", "Mushrooms", "Garlic", "Banana Peppers", "Jalapenos", "Broccoli", "Basil", "Calobrian Peppers", "Pineapple", "Cherry Peppers", "Kalamata Olives", "Artichoke Hearts", "Roasted Red Peppers"];
 const cheeses = ["Feta", "Extra Mozzarella", "Dal"];
-
 
 // When the button is clicked, pick 3 random toppings and show them to the user
 button.addEventListener("click", automaticPizza);
@@ -30,7 +23,8 @@ function automaticPizza(e) {
   let randToppings = [];
   // Get value for amount of toppings
   // If value is IDGAF, generate a random number between 1 and 7
-  let numToppings = toppingsSelect.value;
+  let numToppings = form.numToppings.value;
+  console.log(numToppings);
   if (numToppings === "IDGAF") {
     numToppings = Math.floor((Math.random() * 7) + 1);
   } else {
@@ -76,11 +70,10 @@ function automaticPizza(e) {
   }
 
   let toppingsString = "";
-  // for (let k = 0; k < randToppings.length; k++) {
-  //   toppingsString += `<li>${randToppings[k]}</li>`;
-  // }
+  let k = 0;
   for (var topping of randToppings) {
-    toppingsString += `<li>${topping}</li>`;
+    toppingsString += `<li class="animate dl-${k}">${topping}</li>`;
+    k += 1;
   }
 
   output.innerHTML = toppingsString;

@@ -10,6 +10,7 @@
     })(window,document,'script','dataLayer','GTM-TG8T7RF');</script>
     <!-- End Google Tag Manager -->
     <meta charset="utf-8">
+    <meta name="msvalidate.01" content="7F11AEC20E72FA57BBF0D89679C80A2E" />
     <title>Toppings Made Easy | Pizzabot.me</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,37 +25,90 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
+<header>
+  <div class="container">
+    <h1>Pizzabot</h1>
+    <p>Pizza toppings made easy</p>
+  </div>
+</header>
 <div class="container wrap">
   <form id="pizzaMaker" class="form">
-    <label for="toppingsNumber">How many toppings:</label>
-    <br>
+    <!-- <label for="toppingsNumber">How many toppings:</label>
+
     <select name="toppingsNumber" id="toppingsNumber">
       <option value="IDGAF">IDGAF</option>
-    </select>
-    <br>
-    <br>
-    <input type="radio" name="options" value="all" checked>
-    <label for="all">Down for whatever</label>
-    <br>
-    <input type="radio" name="options" value="meats">
-    <label for="meats">Meats only</label>
-    <br>
-    <input type="radio" name="options" value="veggies">
-    <label for="veggies">Veggies only</label>
-    <br>
-    <br>
-    <button id="create" class="btn">Automatic Pizza!</button>
+    </select> -->
+    
+    <div class="custom-radio">
+      <input id="allRadio" type="radio" name="options" value="all" checked>
+      <label for="allRadio">Down for whatever</label>
+    </div>
+    
+    <div class="custom-radio">
+      <input id="meatsRadio" type="radio" name="options" value="meats">
+      <label for="meatsRadio">Meats only</label>
+    </div>
+    
+    <div class="custom-radio">
+      <input id="veggiesRadio" type="radio" name="options" value="veggies">
+      <label for="veggiesRadio">Veggies only</label>
+    </div>
+
+    <hr>
+    <div id="toppingsNumber" class="clearfix">
+      <div class="custom-radio-alt">
+        <input id="IDGAF" type="radio" name="numToppings" value="IDGAF" checked>
+        <label for="IDGAF">IDGAF</label>
+      </div>
+      
+      <div class="custom-radio-alt">
+        <input id="top1" type="radio" name="numToppings" value="1" checked>
+        <label for="top1">1</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top2" type="radio" name="numToppings" value="2" checked>
+        <label for="top2">2</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top3" type="radio" name="numToppings" value="3" checked>
+        <label for="top3">3</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top4" type="radio" name="numToppings" value="4" checked>
+        <label for="top4">4</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top5" type="radio" name="numToppings" value="5" checked>
+        <label for="top5">5</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top6" type="radio" name="numToppings" value="6" checked>
+        <label for="top6">6</label>
+      </div>
+
+      <div class="custom-radio-alt">
+        <input id="top7" type="radio" name="numToppings" value="7" checked>
+        <label for="top7">7</label>
+      </div>
+    </div>
+
+    <hr>
+
+    <button id="create" class="btn">Pizza</button>
   </form>
   
   <div class="output-wrap">
-    <p>Your automatic pizza is:</p>
-    <ul id="output"></ul>
+    <ul id="output" class="output-toppings"></ul>
     <p id="priceOutput"></p>
   </div>
 </div>
-<footer>
+<footer class="container">
   <div id="copyright">&copy; <span></span> <a href="https://chrisgustin.io">Chris Gustin</a>. All rights reserved.</div>
-  <div>Favicon and background icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </footer>
 
     
